@@ -1,0 +1,7 @@
+Autotest.add_hook(:initialize) {|at|
+  at.add_mapping(%r{^lib/.*\.rb$}) {|f, _|
+    Dir['spec/**/*_spec.rb']
+  }
+  nil
+}
+Autotest::Growl::image_dir = File.expand_path("~")+'/mycode/autotest_fu'
